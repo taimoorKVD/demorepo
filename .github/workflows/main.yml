@@ -11,6 +11,6 @@ jobs:
     - name:  Synced my files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: ftp.whipplewebdesign.com
+        server: ftp.whipplewebdesign.com/home/whipplew/public_html/php/demoaccount
         username: demoaccount@whipplewebdesign.com
         password: ${{ secrets.PROD_FTP_PASSWORD }}
