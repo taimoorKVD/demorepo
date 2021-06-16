@@ -15,6 +15,6 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server: ftp.whipplewebdesign.com
-        username: demoaccount@whipplewebdesign.com
-        password: ${{ secrets.PROD_FTP_PASSWORD }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
         server-dir: /public_html/php/demoaccount/
