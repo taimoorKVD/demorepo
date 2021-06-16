@@ -1,16 +1,16 @@
 on: push
-name:  Deploy website on push
+name: Publish Website
 jobs:
-  web-deploy:
-    name:  Deploy
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-    - name:  Get latest code
-      uses: actions/checkout@v2.3.2
-    
-    - name:  Synced my files
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+    - uses: actions/checkout@v2.1.0
       with:
-        server: ftp.whipplewebdesign.com/home/whipplew/public_html/php/demoaccount
-        username: demoaccount@whipplewebdesign.com
-        password: ${{ secrets.PROD_FTP_PASSWORD }}
+        fetch-depth: 2
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: ftp://ftp.whipplewebdesign.com/
+        ftp-username: demoaccount@whipplewebdesign.com
+        ftp-password: ${{ secrets.PROD_FTP_PASSWORD }}
