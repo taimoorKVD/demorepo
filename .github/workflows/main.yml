@@ -17,4 +17,4 @@ jobs:
         server: ftp.whipplewebdesign.com
         username: demoaccount@whipplewebdesign.com
         password: ${{ secrets.PROD_FTP_PASSWORD }}
-        server-dir: /public_html/php/demoaccount
+        server-dir: /public_html/php/demoaccount/
