@@ -1,19 +1,16 @@
-on: 
-  push:
-    branches:
-      - master
-name: Production Deploy
+on: push
+name: 🚀 Deploy website on push
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
+    - name: 🚚 Get latest code
       uses: actions/checkout@v2
-      with:
-        fetch-depth: 2
-    - name: FTP-Deploy-Action
+    
+    - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server: ftp.whipplewebdesign.com
         username: demoaccount@whipplewebdesign.com
-        password: ${{ secrets.prod_FTP_PASSWORD }}
+        password: ${{ secrets.PROD_FTP_PASSWORD }}
