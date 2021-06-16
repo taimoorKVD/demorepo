@@ -1,14 +1,14 @@
 on: push
 name:  Deploy website on push
 jobs:
-  FTP-Deploy-Action:
+  web-deploy:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
+      - name: FTP-Deploy-Action
       uses: actions/checkout@v2
-    with: 
-      fetch-depth: 2
-    - name: FTP-Deploy-Action
+    
+      - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server: ftp.whipplewebdesign.com
