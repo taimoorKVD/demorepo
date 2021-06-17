@@ -8,7 +8,7 @@ jobs:
     name: 🎉 Prod Deployment
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
+    - name: 🚚 Get latest code1
       uses: actions/checkout@v2
     
     - name: 📂 Sync files
