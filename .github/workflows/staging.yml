@@ -1,5 +1,5 @@
   
-name: FTP Test
+name: FTP Test1
 on:
   push:
 jobs:
