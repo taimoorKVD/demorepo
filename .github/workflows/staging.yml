@@ -8,12 +8,12 @@ jobs:
     name: 🎉 Prod Deployment
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code1
+    - name: 🚚 Get latest code2
       uses: actions/checkout@v2
     
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: 5.134.14.49
+        server: ${{ secrets.ftp_server }}
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
