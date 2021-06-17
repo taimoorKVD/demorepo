@@ -1,16 +1,16 @@
-name: Deploy via ftp
-on: push
+name: remote ssh command
+on: [push]
 jobs:
-  deploy:
-    name: Deploy
+
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Upload ftp
-      uses: sebastianpopp/ftp-action@releases/v2
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.FTP_SERVER }}
-        user: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        remoteDir: "/home/whipplew/public_html/demo"
-        options: "--delete --asci"
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: whoami
