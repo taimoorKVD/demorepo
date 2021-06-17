@@ -12,5 +12,5 @@ jobs:
         host: ${{ secrets.FTP_SERVER }}
         user: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        remoteDir: "public_html/php/demoaccount"
+        remoteDir: "/home/whipplew/public_html/demo"
         options: "--delete --asci"
