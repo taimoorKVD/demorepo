@@ -1,19 +1,16 @@
 on: push
-name: FTP Deploy
+name: Publish Website
 jobs:
-  web-deploy:
-    name: Ubuntu VM
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-    - name: Getting latest Code1
-      uses: actions/checkout@v2.3.2
-    
-    # at this position I tried the string replacing
-
-    - name: Sync Files
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+    - uses: actions/checkout@v2.1.0
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: "/home/whipplew/public_html/demo/"
+        fetch-depth: 2
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: ftp://ftp.whipplewebdesign.com:21/home/whipplew/public_html/demo
+        ftp-username: demo@whipplewebdesign.com
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
