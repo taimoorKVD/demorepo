@@ -12,6 +12,6 @@ jobs:
         host: ${{ secrets.FTP_SERVER }}
         user: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        localDir: "D:\xampp\htdocs\demorepo"
+        localDir: "/htdocs/demorepo"
         remoteDir: "public_html/php/demoaccount"
         options: "--delete --asci"
