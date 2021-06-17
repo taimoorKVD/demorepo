@@ -14,6 +14,6 @@ on:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        ftp-server: ftp://5.134.14.49
+        ftp-server: ftp://ftp.whipplewebdesign.com/
         ftp-username: ${{ secrets.FTP_USERNAME }}
         ftp-password: ${{ secrets.FTP_PASSWORD }}
